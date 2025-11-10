@@ -7,7 +7,7 @@ import Prescription from './pages/Prescription';
 function App() {
 var width = document.body.clientWidth;
 
-if (width >= 1000) {
+if (width >= 960) {
   return (
     <>
       <Nav />
