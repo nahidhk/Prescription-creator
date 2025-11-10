@@ -2,13 +2,15 @@ import React, { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import DoctorData from "../data/config/prescription.json"
 import siteinfo from "../data/setting/siteDetels.json"
-
-
-
+import logo from "../assets/img/logo.jpg"
 
 // icons
-
 import { FaPrescription } from "react-icons/fa6";
+import { IoMdPrint } from "react-icons/io";
+
+
+
+
 
 export default function Prescription() {
     const componentRef = useRef();
@@ -22,10 +24,57 @@ export default function Prescription() {
     return (
         <>
 
-            <div>
-                <button onClick={handlePrint}>Print</button>
+
+
+
+{/* form */}
+            <div className="flex">
+                <div className="grap">
+                    <label htmlFor="">Canagory:</label>
+                    <br />
+                    <select name="" id="" className="select w100px">
+                        <option value="" selected disabled>Select</option>
+                        <option value="">Tap.</option>
+                        <option value="">Cap.</option>
+                    </select>
+                </div>
+                <div className="grap">
+                    <label htmlFor="">Medechin Name:</label><br />
+                    <input type="text" className="input w200px" placeholder="Type KeyWord" />
+                </div>
+
+                <div className="grap">
+                    <label htmlFor="">Set Label</label>
+                    <div className="shortDiv flex around center medel">
+                        <input type="text" className="input w50px" placeholder="সকাল"/>+
+                        <input type="text" className="input w50px" placeholder="দুপুর"/>+
+                        <input type="text" className="input w50px" placeholder="রাত"/>
+                    </div>
+                </div>
             </div>
 
+
+
+
+
+
+{/* form end */}
+
+
+
+
+
+
+
+
+
+
+
+            <br />
+            <div className="hash flex flex-end w100">
+                <button className="printBtn" onClick={handlePrint}> <IoMdPrint className="iconx" /> Print</button>
+            </div>
+            <br />
             <div className="mainBox  flex center">
                 <div>
                     <div className="contBox">
@@ -50,7 +99,10 @@ export default function Prescription() {
                                                 মোবাইল: {DoctorData.doctor_phone}
                                             </p>
                                         </div>
-                                        <div className="w100 flex center end">
+                                        <div className="w100 textCenter flex center end cloman">
+                                            <div className="w100">
+                                                <img className="pLogo" src={logo} alt="" />
+                                            </div>
                                             <div className="banar flex center medel">
                                                 {siteinfo.fullName}
                                             </div>
@@ -110,30 +162,18 @@ export default function Prescription() {
                                                 <div>
                                                     <div className="flex beet lineStyle">
                                                         <div className="textCenter">
-                                                            Tab. Exampule Tablet 500gm
+                                                            <span className="captext"> Tab. Exampule Tablet 500gm</span>
                                                             <br />
-                                                            0 + 1 + 0
+                                                            ০ + ১ + ০ {" "} খাবার পর
                                                         </div>
                                                         <div>
-                                                            7 days
+                                                            ৭ দিন
                                                         </div>
                                                     </div>
                                                 </div>
 
 
 
-                                                <div>
-                                                    <div className="flex beet lineStyle">
-                                                        <div className="textCenter">
-                                                            Tab. Exampule Tablet 500gm
-                                                            <br />
-                                                            1 + 0 + 1
-                                                        </div>
-                                                        <div>
-                                                            7 days
-                                                        </div>
-                                                    </div>
-                                                </div>
 
 
 

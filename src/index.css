@@ -123,7 +123,6 @@ button {
   width: 100%;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
-
 }
 
 .sideNavBtn {
@@ -205,7 +204,6 @@ button {
   background-color: #4680ff;
   color: #fff;
   padding: 5px;
-
 }
 
 .segestBox {
@@ -239,16 +237,16 @@ button {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 .modiul2{
  /* use Rx side */
-  height: 73vh;
+  height: 70vh;
 }
 
 .contBox{
- width: 700px;
+ width: 900px;
  height: 120vh;
+ border: 1px solid #000;
 }
 .cloman{
   flex-direction: column;
@@ -262,4 +260,63 @@ button {
 .lineStyle{
   border-bottom: 1px dashed #000;
   margin: 5px;
+}
+.pLogo{
+  height: 100px;
+}
+.captext{
+  font-size: 20px;
+}
+.printBtn{
+  height: 35px;
+  width: 100px;
+  background-color: #4680ff;
+  color: #fff;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconx{
+  font-size: 18px;
+}
+.hash{
+  background-color: #b4b4bd;
+}
+.flex-end{
+  justify-content: flex-end;
+}
+.input,.select{
+  height: 25px;
+  width: auto;
+  background-color: #fff;
+  border: 1px solid #4680ff;
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
+  transition: all 0.2s;
+}
+.select{
+  height: 35px;
+}
+.w200px{
+  width: 200px;
+}
+.w100px{
+  width: 100px;
+}
+.input:focus{
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+.grap{
+  margin: 6px;
+}
+.shortDiv{
+  width: 200px;
+}
+.w50px{
+  width: 50px;
 }
