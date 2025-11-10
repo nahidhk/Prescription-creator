@@ -112,7 +112,7 @@ export default function Prescription() {
                                                         <div className="textCenter">
                                                             Tab. Exampule Tablet 500gm
                                                             <br />
-                                                            0-1-0
+                                                            0 + 1 + 0
                                                         </div>
                                                         <div>
                                                             7 days
@@ -127,7 +127,7 @@ export default function Prescription() {
                                                         <div className="textCenter">
                                                             Tab. Exampule Tablet 500gm
                                                             <br />
-                                                            0-1-0
+                                                            1 + 0 + 1
                                                         </div>
                                                         <div>
                                                             7 days
