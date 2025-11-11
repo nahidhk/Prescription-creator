@@ -90,14 +90,16 @@ button {
 }
 
 .btn {
-  height: 34px;
+  height: 30px;
+  padding: 5px;
   width: auto;
-  background-color: gainsboro;
+  padding: 0 10px 0 10px;
   border: none;
-  border-radius: 5px;
-  font-size: 1rem;
   cursor: pointer;
   font-family: var(--dabulfont);
+}
+.btn:hover{
+  border: 1px dashed #4680ff;
 }
 
 .navBtn {
@@ -260,6 +262,7 @@ button {
 .lineStyle{
   border-bottom: 1px dashed #000;
   margin: 5px;
+  margin-top: 10px;
 }
 .pLogo{
   height: 100px;
@@ -313,10 +316,16 @@ button {
 }
 .grap{
   margin: 6px;
+  border: 1px dashed #000;
+  padding: 5px;
 }
 .shortDiv{
   width: 200px;
 }
 .w50px{
   width: 50px;
+}
+.styleBtn{
+  background-color: rgb(247, 62, 99);
+  color: #fff;
 }
