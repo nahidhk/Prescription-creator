@@ -212,7 +212,7 @@ export default function Prescription() {
                                         <p>
                                             {DoctorData.doctor_degree.bangla_degree}
                                             <br />
-                                            বিডিএস রেজিঃ নং-{DoctorData.mbdc_no}
+                                             বিএমডিসি রেজিঃ নং-{DoctorData.mbdc}
                                             <br />
                                             মোবাইল: {DoctorData.doctor_phone}
                                         </p>
