@@ -27,6 +27,22 @@ export default function Prescription() {
     const [notes, setNotes] = useState("");
     const [setDay1, setSetDay1] = useState("");
     const [setDay2, setSetDay2] = useState("");
+    // pasent info
+    const [pName, setName] = useState("");
+    const [pxAge, setAge] = useState("");
+    const [pSex, setSex] = useState("");
+    const [presentInfo, setpresentInfo] = useState([]);
+
+    const addprsent = () => {
+const pAge = pxAge+"Y";
+        const presentData = {
+            pName,
+            pAge,
+            pSex
+        }
+        setpresentInfo(presentData);
+
+    }
 
     // prescription list
     const [prescriptions, setPrescriptions] = useState([]);
@@ -73,20 +89,32 @@ export default function Prescription() {
 
                     <div className="grap">
                         <label htmlFor="">Present Name:</label><br />
-                        <input type="text" className="input" />
+                        <input type="text" className="input" onChange={(e) => setName(e.target.value)} />
                     </div>
 
                     <div className="grap">
                         <label htmlFor="">Prsent Age:</label><br />
-                        <input type="number" className="input w50px" />
+                        <input type="number" className="input w50px" onChange={(e) => setAge(e.target.value)} />
                     </div>
 
                     <div className="grap">
                         <label htmlFor="">prsent Sex:</label> <br />
-                        <select name="" id="" className="select">
-                            
+                        <select
+                            className="select"
+                            value={pSex}
+                            onChange={(e) => setSex(e.target.value)}
+                        >
+                            <option value="" disabled>Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
                         </select>
+
                     </div>
+
+                    <button onClick={addprsent} className="btn btn printBtn styleBtn">
+                        Add prsent
+                    </button>
 
                 </div>
             </div>
@@ -246,7 +274,7 @@ export default function Prescription() {
                                         <p>
                                             {DoctorData.doctor_degree.bangla_degree}
                                             <br />
-                                             বিএমডিসি রেজিঃ নং-{DoctorData.mbdc}
+                                            বিএমডিসি রেজিঃ নং-{DoctorData.mbdc}
                                             <br />
                                             মোবাইল: {DoctorData.doctor_phone}
                                         </p>
@@ -274,10 +302,35 @@ export default function Prescription() {
                             </div>
 
                             <div className="nameBox flex around medel w100">
-                                <span>Name:</span>
-                                <span>Sex:</span>
-                                <span>Age:</span>
-                                <span>Date:</span>
+                                <span>
+                                    <b>Name : </b>
+                                    <span className="styleText">
+                                        <i>{presentInfo.pName}</i>
+                                    </span>
+                                </span>
+
+                                <span>
+                                    <b>Sex : </b>
+                                    <span className="styleText">
+                                        <i>{presentInfo.pSex}</i>
+                                    </span>
+                                </span>
+
+                                <span>
+                                    <b>Age : </b>
+                                    <span className="styleText">
+                                        <i>{presentInfo.pAge}</i>
+                                    </span>
+                                </span>
+
+
+                                 <span>
+                                    <b>Date : </b>
+                                    <span className="styleText">
+                                        <i></i>
+                                    </span>
+                                </span>
+
                             </div>
                         </div>
 
