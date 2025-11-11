@@ -329,3 +329,6 @@ button {
   background-color: rgb(247, 62, 99);
   color: #fff;
 }
+.vcc{
+  display: none;
+}

@@ -63,8 +63,42 @@ export default function Prescription() {
 
     return (
         <>
+
+
+            {/* Present Data for from */}
+
+
+            <div className="flex medel">
+                <div className="flex">
+
+                    <div className="grap">
+                        <label htmlFor="">Present Name:</label><br />
+                        <input type="text" className="input" />
+                    </div>
+
+                    <div className="grap">
+                        <label htmlFor="">Prsent Age:</label><br />
+                        <input type="number" className="input w50px" />
+                    </div>
+
+                    <div className="grap">
+                        <label htmlFor="">prsent Sex:</label> <br />
+                        <select name="" id="" className="select">
+                            
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+            {/* Present Data for from */}
+
+
+
+
+
             {/* form */}
-            <div className="center flex medel">
+            <div className="center flex medel vcc">
                 <div className="flex">
                     <div className="grap">
                         <label htmlFor="categore">
