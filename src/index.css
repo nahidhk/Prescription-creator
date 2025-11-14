@@ -136,6 +136,7 @@ button {
   font-size: large;
   transition: all 0.4s;
   margin-bottom: 8px;
+  border:  1px dashed #000;
 }
 
 .icon {
@@ -281,7 +282,8 @@ button {
 
 .printBtn {
   height: 35px;
-  width: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: #4680ff;
   color: #fff;
   border: none;

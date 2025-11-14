@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 // components
 import A4page from "../components/A4page";
 import { brCodeID } from "../scripts/brCodeID";
+import Category from "../components/Categore";
 // icons
 import { GrAdd } from "react-icons/gr";
 import { TbCategory } from "react-icons/tb";
@@ -9,6 +10,8 @@ import { GiMedicines } from "react-icons/gi";
 import { MdAccessTime, MdOutlineEditNote, MdOutlineToday, MdEditCalendar } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
 import { PiGenderIntersexLight } from "react-icons/pi";
+import { MdPersonAddAlt } from "react-icons/md";
+
 
 export default function Prescription() {
     // Step state
@@ -131,8 +134,8 @@ export default function Prescription() {
                                 <option value="Other">Other</option>
                             </select>
                         </div>
-                        <button onClick={addPresent} className="btn btn printBtn styleBtn">
-                            Add present
+                        <button onClick={addPresent} className="btn printBtn styleBtn">
+                          <MdPersonAddAlt/> &nbsp; Add Patient
                         </button>
                     </div>
                 </div>
@@ -159,9 +162,7 @@ export default function Prescription() {
                                 <option value="" disabled>
                                     Select
                                 </option>
-                                <option value="Tab.">Tab.</option>
-                                <option value="Cap.">Cap.</option>
-                                <option value="Syp.">Syp.</option>
+                                <Category />
                             </select>
                         </div>
                         <div className="grap">

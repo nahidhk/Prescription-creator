@@ -5,6 +5,7 @@ import SideNav from './components/SideNav';
 import Prescription from './pages/Prescription';
 import { Routes, Route, Link } from "react-router-dom";
 import Home from './pages/Home';
+import Insert from './pages/Insert';
 
 function App() {
 var width = document.body.clientWidth;
@@ -22,6 +23,7 @@ if (width >= 960) {
           <Routes>
             <Route path='/prescription' element={<Prescription />} />
             <Route path='/' element={<Home />} />
+            <Route path='/insert' element={<Insert />} />
           </Routes>
         </div>
       </div>

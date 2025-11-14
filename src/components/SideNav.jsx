@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 // icons
 
 
-import { MdHome } from "react-icons/md";
-import { FaFilePrescription } from "react-icons/fa";
+import { AiOutlineHome } from "react-icons/ai";
+import { LiaFilePrescriptionSolid } from "react-icons/lia";
+import { VscInsert } from "react-icons/vsc";
 
 
 
@@ -16,15 +17,21 @@ export default function SideNav() {
         <blockquote>
             <div>
                 <button onClick={() => navigate("/")} className="sideNavBtn btn flex medel">
-                    <MdHome className="icon" />
+                    <AiOutlineHome className="icon" />
                     <span>
                         Home
                     </span>
                 </button>
                 <button onClick={() => navigate("/prescription")} className="sideNavBtn btn flex medel">
-                    <FaFilePrescription className="icon"/>
+                    <LiaFilePrescriptionSolid className="icon"/>
                     <span>
                         Prescription
+                    </span>
+                </button>
+                <button onClick={() => navigate("insert")} className="sideNavBtn btn flex medel">
+                    <VscInsert className="icon" />
+                    <span>
+                        Insert
                     </span>
                 </button>
             </div>
