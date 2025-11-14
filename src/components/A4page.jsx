@@ -144,11 +144,7 @@ export default function A4page({ patientData, medicineData }) {
             </div>
 
             {/* Print Button */}
-            <div className="hash flex flex-end w100">
-                <button className="printBtn" onClick={handlePrint}>
-                    <IoMdPrint className="iconx" /> Print
-                </button>
-            </div>
+        
         </div>
     );
 }

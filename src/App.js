@@ -3,6 +3,8 @@ import Nav from './components/Nav';
 import DeviceSizeErr from './components/Err/DeviceSizeErr';
 import SideNav from './components/SideNav';
 import Prescription from './pages/Prescription';
+import { Routes, Route, Link } from "react-router-dom";
+import Home from './pages/Home';
 
 function App() {
 var width = document.body.clientWidth;
@@ -17,7 +19,10 @@ if (width >= 960) {
           <SideNav />
         </div>
         <div className='dop2'>
-          <Prescription />
+          <Routes>
+            <Route path='/prescription' element={<Prescription />} />
+            <Route path='/' element={<Home />} />
+          </Routes>
         </div>
       </div>
     </>

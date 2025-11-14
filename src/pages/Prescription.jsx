@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // components
 import A4page from "../components/A4page";
 import { brCodeID } from "../scripts/brCodeID";
@@ -44,9 +44,13 @@ export default function Prescription() {
         const presentData = { pName, pAge, pSex, formattedDate, brcodeid };
         setpresentInfo(presentData);
 
-        // step 2 show prescription form
+        
         setStep(2);
     };
+
+    useEffect(()=>{
+      
+    })
 
     const addPre = () => {
         if (!medicine) {
