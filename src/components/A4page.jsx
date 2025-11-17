@@ -129,7 +129,10 @@ export default function A4page({ patientData, medicineData }) {
                                 </div>
                                 <div>
                                     <p className="mark">চেম্বার :</p>
-                                    <p>{siteinfo.fullName}</p>
+                                    <p>{siteinfo.fullName} <br/>
+                      <span className="t16">
+                      {siteinfo.bangla_address}    
+                      </span>              </p>
                                     <p className="mark">রোগী দেখার সময়:</p>
                                     <p className="t16">{DoctorData.chamber_time}</p>
                                 </div>
