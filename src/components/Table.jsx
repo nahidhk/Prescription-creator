@@ -2,12 +2,9 @@ import React from "react";
 
 export default function Table({ tableData }) {
 
-    // যদি tableData ফাঁকা হয়
     if (!tableData || tableData.length === 0) {
         return <p>No data found</p>;
     }
-
-    // Object keys = table header (name, age)
     const headers = Object.keys(tableData[0]);
 
     return (

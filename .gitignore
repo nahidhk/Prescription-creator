@@ -12,7 +12,8 @@
 /build
 
 /backend/config.php
-
+/app/vendor
+/app/.env
 /src/api/api.json
 # misc
 .DS_Store
