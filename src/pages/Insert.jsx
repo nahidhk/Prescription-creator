@@ -1,26 +1,11 @@
-import useCategory from "../hooks/useCategore";
-import Table from "../components/Table";
-
+import react from "react";
+// componets/post
+import Categ from "../components/post/Categ";
 export default function Insert() {
-    const categories = useCategory();
-
-    console.log(categories);
 
     return (
         <>
-            <div className="flex center medel">
-                <div className="grap">
-                    <h2>Category</h2>
-
-                    <div className="grap">
-                        <label>Category Type Insert</label>
-                        <br />
-                        <input type="text" className="input" placeholder="e.g." />
-                    </div>
-
-                    <Table tableData={categories} />
-                </div>
-            </div>
+          <Categ />
         </>
     );
 }

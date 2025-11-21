@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Table({ tableData }) {
+export default function Table({ tableData , title }) {
 
     if (!tableData || tableData.length === 0) {
         return <p>No data found</p>;
@@ -10,7 +10,7 @@ export default function Table({ tableData }) {
     return (
         <div className="table_component" role="region" tabIndex={0}>
             <table>
-                <caption>Table 1</caption>
+                <caption>{title}</caption>
 
                 <thead>
                     <tr>

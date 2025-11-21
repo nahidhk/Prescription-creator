@@ -136,7 +136,7 @@ button {
   font-size: large;
   transition: all 0.4s;
   margin-bottom: 8px;
-  border:  1px dashed #000;
+  border: 1px dashed #000;
 }
 
 .icon {
@@ -331,7 +331,8 @@ button {
   width: 100px;
 }
 
-.input:focus {
+select:focus,
+input:focus {
   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 
@@ -422,41 +423,91 @@ button {
   bottom: 5px;
   width: 9px;
   height: 15px;
-  border: solid #000;  
+  border: solid #000;
   border-width: 0 1px 1px 0;
   transform: rotate(45deg);
 }
 
 .table_component {
-    overflow: auto;
-    width: 100%;
+  overflow: auto;
+  width: 100%;
 }
 
 .table_component table {
-    border: 1px dashed #dededf;
-    height: 100%;
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-    border-spacing: 1px;
-    text-align: left;
+  border: 1px dashed #dededf;
+  height: 100%;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  text-align: left;
 }
 
 .table_component caption {
-    caption-side: top;
-    text-align: center;
+  caption-side: top;
+  text-align: center;
 }
 
 .table_component th {
-    border: 1px dashed #dededf;
-    background-color: #eceff1;
-    color: #000000;
-    padding: 5px;
+  border: 1px dashed #dededf;
+  background-color: #eceff1;
+  color: #000000;
+  padding: 5px;
 }
 
 .table_component td {
-    border: 1px dashed #dededf;
-    background-color: #ffffff;
-    color: #000000;
-    padding: 5px;
+  border: 1px dashed #dededf;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 5px;
+}
+
+.w50 {
+  width: 50%;
+}
+
+
+details {
+  background-color: #f0edcc;
+  padding: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+details summary {
+  padding: 10px;
+  font-size: 22px;
+  color: purple;
+}
+
+details p {
+  padding-left: 30px;
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 5px;
+}
+
+.fxBtn {
+  height: 35px;
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #fff;
+  background-color: #4680ff;
+  cursor: pointer;
+  border: none;
+}
+
+.fx {
+  display: flex;
+  width: auto;
+  margin: 10px;
+}
+
+.fxInput {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #4680ff;
+  border: 1px solid #4680ff;
+  outline: none;
 }

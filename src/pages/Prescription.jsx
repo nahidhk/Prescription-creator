@@ -16,10 +16,9 @@ import { MdPersonAddAlt } from "react-icons/md";
 
 export default function Prescription() {
 
-    // Custom hook call করতে হবে
+
     const categories = useCategory();
-    // Step state
-    const [step, setStep] = useState(1); // 1 = show patient form, 2 = show prescription form
+    const [step, setStep] = useState(1); 
 
     // input states
     const [categore, setCategore] = useState("");
