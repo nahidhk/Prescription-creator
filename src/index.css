@@ -465,29 +465,6 @@ input:focus {
 .w50 {
   width: 50%;
 }
-
-
-details {
-  background-color: #f0edcc;
-  padding: 5px;
-  cursor: pointer;
-  width: 100%;
-}
-
-details summary {
-  padding: 10px;
-  font-size: 22px;
-  background-color: purple;
-  color: #fff;
-}
-
-details p {
-  padding-left: 30px;
-  font-size: 18px;
-  line-height: 1.2;
-  margin: 5px;
-}
-
 .fxBtn {
   height: 35px;
   width: auto;
@@ -538,5 +515,33 @@ details p {
   margin: 20px;
   border: 2px dotted red;
   width: 100%;
+}
 
+details {
+  background-color: #f0edcc;
+  padding: 5px;
+  cursor: pointer;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s;
+}
+
+details[open] {
+  grid-template-rows: 1fr;
+}
+
+details summary {
+  padding: 10px;
+  font-size: 22px;
+  background-color: purple;
+  color: #fff;
+}
+
+details p {
+  padding-left: 30px;
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 5px;
+  overflow: hidden;
 }
