@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 // components
 import A4page from "../components/A4page";
-import { brCodeID } from "../scripts/brCodeID";
+//import { brCodeID } from "../scripts/brCodeID";
 import PresentAbbPrepction from "../components/PresentAbbPrepction";
 // hooks
 import useCategory from "../hooks/getjson/useCategore";
@@ -16,6 +16,8 @@ import { toast } from "react-toastify";
 
 
 export default function Prescription() {
+    const [newPatient, setNewPatient] = useState(null);
+
 
 
     const categories = useCategory();
@@ -64,7 +66,7 @@ export default function Prescription() {
         <>
             {/* Step 1 - Patient Form */}
             {step === 1 && (
-                <PresentAbbPrepction />
+                <PresentAbbPrepction onAddPatient={setNewPatient} />
             )}
 
             {/* Step 2 - Prescription Form */}
@@ -228,9 +230,7 @@ export default function Prescription() {
                 </div>
                 <div>
                     <A4page
-                        patientData={{
-                            
-                        }}
+                        patientData={JSON.stringify(newPatient)}
                         medicineData={prescriptions}
                     />
                 </div>

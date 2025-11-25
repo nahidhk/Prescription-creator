@@ -14,11 +14,14 @@ import { HiOutlinePhone } from "react-icons/hi";
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
 
-function PresentAbbPrepction() {
+function PresentAbbPrepction({ onAddPatient }) {
+
     // user data
     const users = useUsers();
+
     // steps
     const [step, setStep] = useState(1);
+
     // patient info
     const [pName, setName] = useState("");
     const [pxAge, setAge] = useState("");
@@ -37,10 +40,7 @@ function PresentAbbPrepction() {
             return;
         }
 
-        // exact match filter (better than includes)
-        const filteredUsers = users.filter(user => user.number === number);
-
-        const user = filteredUsers[0];
+        const user = users.find(user => user.number === number);
 
         if (user) {
             setName(user.name);
@@ -63,8 +63,10 @@ function PresentAbbPrepction() {
         setStep(1);
     };
 
-    // Add Patient
+
+    // Add Patient Button
     const handleAddPatient = () => {
+
         if (!pName || !pxAge || !pSex) {
             toast.error("Fill all information");
             return;
@@ -77,10 +79,13 @@ function PresentAbbPrepction() {
             number: number
         };
 
-        console.log("Patient Added:", newPatient);
+        // Send data to parent (Home.jsx)
+        if (typeof onAddPatient === "function") {
+            onAddPatient(newPatient);
+        }
 
+        // If new patient, save to DB
         if (!users.find(user => user.number === number)) {
-            users.push(newPatient);
 
             fetch(`${api.request}://${api.server}${api.postPath}?key=${api.apikey}&post=users`, {
                 method: "POST",
@@ -89,10 +94,8 @@ function PresentAbbPrepction() {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
-
                     if (data.success) {
-                        toast.success("New patient added to the system");
+                        toast.success("New patient added to system");
                     } else {
                         alert("Error: " + data.error);
                     }
@@ -103,13 +106,14 @@ function PresentAbbPrepction() {
             toast.info("Patient already exists in the system");
         }
 
-        // Reset all
+        // Reset Fields
         setName("");
         setAge("");
         setSex("");
         setNumber("");
         setStep(1);
     };
+
 
     return (
         <>
@@ -132,8 +136,8 @@ function PresentAbbPrepction() {
                                     onChange={(e) => setNumber(e.target.value)}
                                 />
                             </div>
-                            <div className="grap">
 
+                            <div className="grap">
                                 <button
                                     className="btn styleBtn printBtn"
                                     style={{ marginTop: "10px" }}
@@ -143,7 +147,6 @@ function PresentAbbPrepction() {
                                 </button>
                             </div>
                         </>
-
                     )}
 
                     {/* STEP 2 */}
