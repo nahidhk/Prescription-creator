@@ -7,6 +7,7 @@ import { convertToBangla } from "../../../scripts/banglaConvart";
 import { FaPrescription } from "react-icons/fa6";
 import { IoMdPrint } from "react-icons/io";
 import BarCodeSvg from "../../barcode/BarCodeSvg";
+import "./A4page";
 
 export default function A4page({ patientData, medicineData }) {
     const componentRef = useRef();
@@ -17,9 +18,9 @@ export default function A4page({ patientData, medicineData }) {
     return (
         <div>
             <div className="mainBox flex center">
-                <div className="contBox">
-                    <div className="ex" ref={componentRef}>
-                        {/* Header */}
+                <div>
+                    <div className="contBox flex flex-col justify-between" ref={componentRef}>
+                        {/* HEADER + MODIUL 1 */}
                         <div className="modiul1">
                             <div className="flex w100 center">
                                 <div className="flex around w95">
@@ -61,70 +62,104 @@ export default function A4page({ patientData, medicineData }) {
                             <div className="nameBox flex around medel w100">
                                 <span>
                                     <b>Name : </b>
-                                    <i>
-                                        {patientData?.name || "____________________"}
-                                    </i>
+                                    <i>{patientData?.name || "____________________"}</i>
                                 </span>
                                 <span>
                                     <b>Sex : </b>
-                                    <i>
-                                        {patientData?.sex || "______"}
-                                    </i>
+                                    <i>{patientData?.sex || "______"}</i>
                                 </span>
                                 <span>
                                     <b>Age : </b>
-                                    <i>
-                                        {patientData?.age+"Y" || "____"}
-                                    </i>
+                                    <i>{patientData?.age || "____"}Y</i>
                                 </span>
                                 <span>
                                     <b>Date : </b>
-                                    <i></i>
                                 </span>
                             </div>
-                        </div>
 
-                        {/* Prescription list */}
-                        <div className="flex beet w100 modiul2">
-                            <div className="sideBar">
-                                <blockquote>
-                                    <div className="cloman">C/C</div>
+
+                            {/* MODIUL 2 */}
+                            <div className="flex beet w100 modiul2">
+                                <div className="sideBar">
+                                    <div className="cloman">
+                                        <span className="bigText">C/C</span>
+                                        <br />
+                                        <div className="flex">
+                                            <div>
+                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, delectus vitae amet ipsum excepturi perferendis corrupti? Placeat harum accusamus corrupti, repellendus vel, praesentium at quasi quibusdam velit fuga iusto beatae?
+                                            </div>
+                                            <div className="flex cloman">
+                                                <div className="flex">
+                                                    <div className="rayBox borderRB">
+                                                        <input type="checkbox" className="checkSystem" />
+                                                    </div>
+                                                    <div className="rayBox borderLB">
+                                                        <input type="checkbox" className="checkSystem" />
+                                                    </div>
+                                                </div>
+                                                <div className="flex">
+                                                    <div className="rayBox borderRT">
+                                                        <input type="checkbox" className="checkSystem" />
+                                                    </div>
+                                                    <div className="rayBox borderLT">
+                                                        <input type="checkbox" className="checkSystem" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div className="cloman">O/E</div>
                                     <div className="cloman">ADV:</div>
                                     <div className="cloman">X-Ray:</div>
-                                </blockquote>
+                                </div>
+
+                                <div className="w100 borderset">
+                                    <div className="flex medel beet ">
+                                        <FaPrescription className="iconr" />
+                                        <span>
+                                            <BarCodeSvg code={"1234567"} />
+                                        </span>
+                                    </div>
+                                    <blockquote>
+                                        {medicineData?.length > 0 ? (
+                                            medicineData.map((item, index) => (
+                                                <div key={index} className="flex beet lineStyle">
+                                                    <div>
+                                                        <span className="captext">
+                                                            {item.categore} {item.medicine}
+                                                        </span>
+                                                        <br />
+                                                        {convertToBangla(item.timeL)} {item.notes}
+                                                    </div>
+                                                    <div>{convertToBangla(item.setDay)}</div>
+                                                </div>
+                                            ))
+                                        ) : (
+                                            <p className="textCenter">No prescription added yet.</p>
+                                        )}
+
+
+                                        <div>
+
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim, ipsa in? Aliquam officiis porro iure repudiandae distinctio expedita eum ea. Sint provident aliquam optio beatae rem placeat dicta animi reprehenderit illo tenetur atque consectetur et distinctio harum, nesciunt aut. Impedit, aliquam nulla. Quas quia, consectetur ipsam asperiores ratione itaque velit tenetur nam sapiente praesentium qui consequuntur eveniet obcaecati doloremque molestias animi cumque reprehenderit, reiciendis quisquam dolorem ut accusamus iusto omnis. Molestiae error accusamus laboriosam sint quisquam odit possimus ducimus perferendis quasi doloribus. At eaque quod doloremque reprehenderit. Aut aliquam magnam laudantium error quibusdam natus ratione inventore. Dicta totam minus eius obcaecati adipisci. Incidunt, itaque. Vel consectetur rerum dignissimos, accusamus architecto ea deserunt atque autem recusandae eos assumenda placeat, omnis in quae asperiores earum quam provident soluta explicabo eius aliquam id. Unde non aut ab dignissimos hic fugit, alias temporibus recusandae nesciunt maiores corporis repudiandae, consequuntur quaerat culpa quas ratione sed adipisci neque sapiente, rem natus. Impedit atque officiis blanditiis labore consequuntur doloremque, tempore at alias? Eligendi, cum obcaecati? Sunt ea repellendus recusandae, placeat consectetur fugiat accusantium ex dicta aliquid explicabo impedit similique nam voluptas fuga iure quaerat voluptatem, aut optio magnam architecto consequatur, eum maiores labore cum? Voluptatum, ipsum nisi.
+
+
+
+                                        </div>
+
+
+
+                                    </blockquote>
+                                </div>
                             </div>
 
-                            <div className="w100">
-                                <div className="flex medel beet ">
-                                    <FaPrescription className="iconr" />
-                                    <span>
-                                        <BarCodeSvg code={"1234567"} />
-                                    </span>
-                                </div>
-                                <blockquote>
-                                    {medicineData?.length > 0 ? (
-                                        medicineData.map((item, index) => (
-                                            <div key={index} className="flex beet lineStyle">
-                                                <div>
-                                                    <span className="captext">
-                                                        {item.categore} {item.medicine}
-                                                    </span>
-                                                    <br />
-                                                    {convertToBangla(item.timeL)} {item.notes}
-                                                </div>
-                                                <div>{convertToBangla(item.setDay)}</div>
-                                            </div>
-                                        ))
-                                    ) : (
-                                        <p className="textCenter">No prescription added yet.</p>
-                                    )}
-                                </blockquote>
-                            </div>
                         </div>
 
-                        {/* Footer */}
-                        <div className="modiul3">
+
+
+                        {/* MODIUL 3 — ALWAYS BOTTOM */}
+                        <div className="modiul3 mt-auto">
                             <div className="segestBox flex beet w100">
                                 <div className="t16">
                                     <ul>
@@ -135,10 +170,12 @@ export default function A4page({ patientData, medicineData }) {
                                 </div>
                                 <div>
                                     <p className="mark">চেম্বার :</p>
-                                    <p>{siteinfo.fullName} <br />
+                                    <p>
+                                        {siteinfo.fullName} <br />
                                         <span className="t16">
                                             {DoctorData.doctor_address.bangla_address}
-                                        </span>              </p>
+                                        </span>
+                                    </p>
                                     <p className="mark">রোগী দেখার সময়:</p>
                                     <p className="t16">{DoctorData.chamber_time}</p>
                                 </div>
@@ -152,9 +189,9 @@ export default function A4page({ patientData, medicineData }) {
                 </div>
             </div>
 
-            {/* Print Button */}
-            
-
+            <button onClick={handlePrint}>
+                print
+            </button>
         </div>
     );
 }

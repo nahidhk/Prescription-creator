@@ -39,12 +39,9 @@ export default function Prescription() {
 
             <PresentAbbPrepction onAddPatient={setNewPatient} />
             <MedicineAddPrepction onAddMedicine={setMedicineData} />
-
-
-
-
+ 
             {/* Print section */}
-            <div className="flex">
+            <div className="flex"> 
                 <div className="ccOg">
                     {/* C/C */}
                     <div>
@@ -92,10 +89,10 @@ export default function Prescription() {
 
 
                 <div>
-                    {/* <A4page
-                        patientData={newPatient}
-                        medicineData={medicineData}
-                    /> */}
+                    <A4page
+                        patientData={null}
+                        medicineData={null}
+                    />
                 </div>
             </div>
         </>
