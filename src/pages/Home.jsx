@@ -1,13 +1,9 @@
-import React from "react";
-import MedicineAddPrepction from "../components/prepction/medicineAddPrepction";
+import React, { useState } from "react";
+
 
 export default function Home() {
-
-    
-
     return (
         <>
-            <MedicineAddPrepction />
         </>
     );
 }

@@ -15,7 +15,7 @@ body {
   font-family: var(--dualFont);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #b4b4bd;
+  background-color: #e9e9ec;
 }
 
 h1,
@@ -118,7 +118,7 @@ button {
   position: sticky;
   top: 54px;
   width: 300px;
-  background-color: #eeeeee;
+  background-color: #feffe0;
   height: 100%;
 }
 
@@ -131,12 +131,12 @@ button {
 .sideNavBtn {
   width: 100%;
   text-align: left;
-  border-radius: 3px;
   background-color: #fff;
   font-size: large;
   transition: all 0.4s;
-  margin-bottom: 8px;
-  border: 1px dashed #000;
+  padding: 5px;
+  border: 1px dashed #4680ff;
+  cursor: pointer;
 }
 
 .icon {
@@ -144,8 +144,13 @@ button {
   padding: 5px;
 }
 
-.sideNavBtn:hover {
-  background-color: #a5c2ff;
+.sideNavBtn:hover , .active {
+  background-color: #4680ff;
+  color: #fff;
+}
+.active {
+  background-color: #4681ff3a;
+  color: #000;
 }
 
 .mailholdbox {
@@ -193,7 +198,7 @@ button {
 }
 
 .sideBar {
-  background-color: #a5c2ff55;
+  background-color: #fffce9;
   width: 300px;
   border-right: 2px solid #000;
   height: 100%;
@@ -605,4 +610,7 @@ details[open] p {
   100%{
     transform: rotateX(0);
   }
+}
+.coner{
+  padding: 10px;
 }

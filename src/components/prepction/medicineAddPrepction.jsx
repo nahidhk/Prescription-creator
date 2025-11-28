@@ -10,7 +10,7 @@ import { MdAccessTime, MdOutlineEditNote, MdOutlineToday } from "react-icons/md"
 import useCategory from "../../hooks/getjson/useCategore";
 import { toast } from "react-toastify";
 
-export default function MedicineAddPrepction() {
+export default function MedicineAddPrepction({onAddMedicine}) {
 
     const categories = useCategory();
 
@@ -26,6 +26,7 @@ export default function MedicineAddPrepction() {
 
     const [prescriptions, setPrescriptions] = useState([]);
 
+
     const addPre = () => {
         if (!medicine) {
             toast.error("Please enter medicine name!");
@@ -35,17 +36,17 @@ export default function MedicineAddPrepction() {
         const timeL = `${timeL1 || 0} + ${timeL2 || 0} + ${timeL3 || 0}`;
         const setDay = `${setDay1 || ""} ${setDay2 || ""}`;
 
-        const newPrescription = { 
-            categore, 
-            medicine, 
-            timeL, 
-            notes, 
-            setDay 
+        const newPrescription = {
+            categore,
+            medicine,
+            timeL,
+            notes,
+            setDay
         };
 
         setPrescriptions([...prescriptions, newPrescription]);
 
-        // clear input
+       // clear input
         setCategore("");
         setMedicine("");
         setTimeL1("");
@@ -54,7 +55,14 @@ export default function MedicineAddPrepction() {
         setNotes("");
         setSetDay1("");
         setSetDay2("");
+       
     };
+    
+    if (typeof onAddMedicine === "function") {
+        onAddMedicine(prescriptions)
+    }
+
+
 
     return (
         <>
@@ -191,4 +199,4 @@ export default function MedicineAddPrepction() {
             </div>
         </>
     );
-}
+} 
