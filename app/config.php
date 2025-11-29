@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "N@hid123$#";
-$db   = "rds";
+$host = "eu-host-1.championstack.com";
+$user = "ndsqltop";
+$pass = "(N@hid123$##)";
+$db   = "ndsqltop_rds";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
